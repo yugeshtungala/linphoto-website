@@ -1,0 +1,64 @@
+
+ <div class="container shadow-lg p-3 mb-5 bg-white rounded  w-75 mt-5 pb-5">
+    <!-- table header -->
+    <h1 class="text-center p-5">User Details</h1>
+    <!-- table -->
+ <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+      <th scope="col">Header</th>
+      <th scope="col">Edit/Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr [@del] *ngFor=" let data of gettingUserData ">
+                <td>{{data.id}}</td>
+                <!-- here i givan custum pipe that adds the both firstname & last name -->
+                <!-- and also i used another custum pipe that displays when user selects the different genders -->
+                <td>{{data.fname | name:data.lname |  type:data.gender}}</td>
+                <!-- here i used inbuilt pipe to display value in lower case -->
+                <!-- <td>{{registrationForm.value.lname | uppercase}}</td> -->
+                <td>{{data.email | lowercase}}</td>
+                <!-- here i used custom pipe that will substract the user's date of birth & current date -->
+                <td>{{ data.dob | date}}</td>
+                <td>{{data.number}}</td>
+                <td>
+                  <!-- button for edit -->
+                <button type="button"  routerLink="/edit/{{data.id}}" class="btn btn-info">Update</button>
+                <!-- button for delete -->
+                <button type="delete"  (click)="deleteUserData(data.id)" class="btn btn-danger">Delete</button>
+           </td> </tr>
+
+  </tbody>
+</table>
+<!-- table for address -->
+<h1 class="text-center p-5">User Address</h1>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">country</th>
+      <th scope="col">state</th>
+      <th scope="col">city</th>
+      <th scope="col">Pincode</th>
+    </tr>
+  </thead>
+  <tbody>
+      
+     <!--  i displayed data using for loop that arrat comes rom ts file -->
+     <tr @del *ngFor=" let data of gettingUserData ">
+<td>{{data.id}}</td>
+        <td>{{data.address.country}}</td>
+        <td>{{data.address.state}}</td>
+        <td>{{data.address.city}}</td>
+        <td>{{data.address.pincode}}</td>
+    </tr>
+
+  
+  </tbody>
+</table>
+</div>

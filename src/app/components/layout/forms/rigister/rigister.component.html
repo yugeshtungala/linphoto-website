@@ -1,0 +1,380 @@
+<!-- html Registration Form -->
+
+  <div class="container shadow-lg p-3 mb-5 bg-white rounded col-sm-12 col-xs-10 col-md-8 col-lg-10 col-xl-8 mt-5 rounded-25 ">
+      <h1 class="text-center p-5">Registration Form</h1>
+  <!-- registrationform starts -->
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" >
+  <!-- FIRST NAME  & LAST NAME -->
+    <div class="form-row"> 
+      <div class="form-group col-md-6">
+        <label>First Name</label>
+        <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+        <input type="text"  class="form-control" formControlName="fname"   placeholder="first name"
+        [class.is-invalid]="registrationForm.get('fname').invalid && (registrationForm.get('fname').touched || registrationForm.get('fname').dirty || submit) "   >
+       <!-- if the input field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('fname').invalid && (registrationForm.get('fname').touched || registrationForm.get('fname').dirty || submit)" class="text-danger">
+         <small *ngIf="registrationForm.get('fname').errors?.required">first name required</small>
+         <!-- field should contain minimum letters-->
+         <small *ngIf="registrationForm.get('fname').errors?.minlength">  First name must be at least 3 characters </small>
+        <!-- fields should contain max letters -->
+  
+        <small *ngIf="registrationForm.get('fname').errors?.maxlength">  First name should not exceed more than 20 letters</small>
+         <!-- user name should not contain numbers -->
+         <small *ngIf="registrationForm.get('fname').errors?.pattern"> please enter valid name</small>
+  
+       </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label >Last name</label>
+              <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+        <input type="text" class="form-control" formControlName="lname" placeholder="last name"
+        [class.is-invalid]="registrationForm.get('lname').invalid && ( registrationForm.get('lname').touched || submit)"
+        >
+        <!-- validation for last name by using ngif  -->
+        <!-- if the input field gets touched or gets invalid it should display an error message -->
+        <div *ngIf="(registrationForm.get('lname').touched || submit) && registrationForm.get('lname').invalid  " class="text-danger">
+          <small *ngIf="registrationForm.get('lname').errors?.required">Last name required</small>
+           <!-- field should be minimum -->
+          <small *ngIf="registrationForm.get('lname').errors?.minlength">  Last name must be at least 3 characters </small>
+             <!-- fields should contain max letters -->
+  
+  
+        <small *ngIf="registrationForm.get('lname').errors?.maxlength">  last name should not exceed more than 20 letters</small>
+       
+          
+          <!-- user name should not contain numbers -->
+          <small *ngIf="registrationForm.get('lname').errors?.pattern">  please enter valid name</small>
+        </div>   
+      </div>
+    </div> 
+  <!-- EMAIL & PHONE NUMBER -->
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Email</label> 
+            <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+      <input type="email" class="form-control" formControlName="email" 
+      
+      [class.is-invalid]="registrationForm.get('email').invalid && (registrationForm.get('email').touched  || registrationForm.get('email').dirty || submit)"
+    
+      >
+         <!-- validation for email by using ngif  -->
+       <!-- if the email field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('email').invalid && (registrationForm.get('email').touched  || registrationForm.get('email').dirty || submit)" class="text-danger">
+        <small *ngIf="registrationForm.get('email').errors?.required">email is required</small>
+               <!-- fields should contain max letters -->
+  
+  
+             <small *ngIf="registrationForm.get('email').errors?.maxlength">  last name should not exceed more than 25 letters</small>
+       <!-- to maintain email pattern -->
+   
+        <small *ngIf="registrationForm.get('email').errors?.email"> enter a valid email</small>
+      </div>
+  
+   
+    </div>
+    
+    <div class="form-group col-md-6">
+      <label>Mobile no:-</label>
+            <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+      <input type="number" class="form-control" formControlName="number" 
+      [ngClass]="{'is-invalid': number.invalid && (number.touched || submit )}" 
+    
+      >
+     <!-- validation for mobile no by using ngif  -->
+       <!-- if the mobile field gets touched or gets invalid it should display an error message -->
+       <!-- and additionally we have to give an number pattern  -->
+       <div *ngIf="number.invalid && (number.touched || submit) " class="text-danger">
+         <!-- number required -->
+        <small *ngIf="number.errors?.required">mobile number is required</small>
+   <!-- pattern for mobile number that contains atleast 10 digits -->
+        <small *ngIf="number.errors?.pattern"> mobile number must be 10 digits</small>
+      </div>
+  
+   
+    </div> 
+    <!-- gender & date of birth -->
+    <div class="form-group col-md-6 ">
+      <label>Gender:-</label><br>
+     
+  
+      
+      <!-- data gets from ts file array ...to print data i used ngfor -->
+    <div class="form-check-label form-check-inline" *ngFor="let gender of genders">
+      <!-- input field i have bind the value property that binds the array -->
+      <input type="radio" class="form-check-input ml-5" formControlName="gender" [id]="gender" [value]="gender"
+    
+      > 
+      <!-- here i used  property binding for - for & id that will connect the two fields -->
+      <label [for]="gender" class="form-check-label" >{{gender}}</label>
+    
+        <!-- field required condition -->
+        
+       
+    </div> <br>
+    <div class="text-danger" *ngIf=" submit">
+    <small *ngIf="gender.errors?.required"> Gender is required</small>
+    </div> 
+    </div>
+    
+    <!-- date of birth -->
+    <div class="form-group col-md-6">
+          <label >Date of Birth:-</label>
+  <!-- here i used ngclass to display the error ehen user gets touched & invalid -->
+          <input type="date" class="form-control" formControlName="dob" 
+          [ngClass]="{'is-invalid': dob.invalid && ( dob.touched || submit)}"
+          >
+            <!-- if the input field gets touched or gets invalid it should display an error message -->
+          <div *ngIf="dob.invalid &&( dob.touched || submit) " class="text-danger">
+            <!-- dob is required -->
+            <small *ngIf="dob.errors?.required">Date of birth is required</small>
+  <!-- here minAge is an coustom validation -->
+            <!-- dob contains min & max age -->
+            <small *ngIf="dob.errors?.minAge">Employees age must be in between 21yrs to 50 yrs</small> 
+       
+          
+          </div>
+        </div>
+  </div>
+  
+  <!-- password fields -->
+  <div class="form-row">
+    <div class="form-group col-md-6">
+  <label>Enter Password</label>
+  <!-- i am displaying input field with pre defined is-invalid class -->
+  <input type="password" class="form-control" formControlName="password"
+  [ngClass]="{'is-invalid': password.invalid && (password.touched || password.dirty || submit)}">  
+  
+    <!-- validation for password by using ngif  -->
+     <!-- if the mobile field gets touched or gets invalid it should display an error message -->
+    <div *ngIf="password.invalid && (password.touched || password.dirty || submit) " class="text-danger">
+      <!-- required condition -->
+      <small *ngIf="password.errors?.required">password is required</small>
+      
+     
+         <!-- fields should be maximun -->
+  
+         <small *ngIf="password.errors?.maxlength"> password should not exceed more than 20 letters</small>
+       
+       <!-- and additionally we have to give an password pattern  -->
+  <!-- that pattern contain atleast 1 capital letter , 1 small letter,1 special charecter & 1 1 integer  -->
+  <small *ngIf="password.errors?.pattern "> pattern with number capitals lowerletters any special character min 8 characters  </small>
+  
+   
+  </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Re-enter Password</label>
+      <!-- here i display the input field error by using is-invalid class -->
+      <input type="password" class="form-control" [class.is-invalid]=" registrationForm.errors?.mismatch || (reenter_password.touched || submit ) && reenter_password.invalid" formControlName="reenter_password">   
+   <!-- here i applied mis match error message  -->
+      <p class="text-danger" *ngIf=" registrationForm.errors?.mismatch  ">password do not match</p>
+      <!-- here i displayed required error message   -->
+           <div  *ngIf="(reenter_password.touched || submit )&& reenter_password.invalid" class="text-danger">
+        <!-- it display's if user skips the field -->
+              <p *ngIf="reenter_password.errors?.required">please re-enter passwrd </p>
+  
+          
+                   </div>
+    </div>
+  </div>
+  
+  <!-- address fields -->
+  <!-- formArrayName="addAddress" *ngFor="let address of addAddress.controls; let i= index" [formControlName]="i"-->
+  <div formGroupName="address" >
+    <div class="form-row">
+     <div class="form-group col-md-4">
+       <label >country</label>
+             <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+       <input type="text" class="form-control" formControlName="country" 
+      [class.is-invalid]="registrationForm.get('address.country').invalid && (registrationForm.get('address.country').touched || submit )"
+       >
+            <!-- validation for country by using ngif  -->
+       <!-- if the country field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('address.country').invalid && ( registrationForm.get('address.country').touched || submit) " class="text-danger">
+        <!-- field required -->
+        <small *ngIf="registrationForm.get('address.country').errors?.required"> country is required</small>
+            <!-- fields should contain max letters -->
+  
+        <small *ngIf="registrationForm.get('address.country').errors?.maxlength">field should not exceed more than 20 letters</small>
+   
+       <!-- fields should be min -->
+  
+       <small *ngIf="registrationForm.get('address.country').errors?.minlength"> country name must be atleast 3 letters</small>
+       <!-- field should not contain numbers -->
+       <small *ngIf="registrationForm.get('address.country').errors?.pattern"> invalid country name</small>
+       
+      </div>
+  
+       
+     </div>
+     <div class="form-group col-md-4" >
+         <label >state</label>
+               <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+         <select  formControlName="state" class="form-control"  
+         [class.is-invalid]="registrationForm.get('address.state').invalid && (registrationForm.get('address.state').touched || submit )"
+         >  
+       <option selected  value="">Choose...</option>
+       <!-- Here i used for loop to display array which is in ts file -->
+         <option *ngFor="let state of states">{{state}}</option>
+       
+       </select>
+       <!-- validation for state field by using ngif  -->
+       <!-- if the state field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('address.state').invalid && (registrationForm.get('address.state').touched || submit) " class="text-danger">
+      <!-- field required -->
+        <small *ngIf="registrationForm.get('address.state').errors?.required"> state is required</small>
+   
+  
+      </div>
+       </div>
+    
+       <div class="form-group col-md-4">
+             <label >City</label>
+                   <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+             <input type="text" class="form-control" formControlName="city" 
+             [class.is-invalid]="registrationForm.get('address.city').invalid && (registrationForm.get('address.city').touched || submit )"
+       
+           >
+             <!-- validation for City field by using ngif  -->
+       <!-- if the City field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('address.city').invalid && (registrationForm.get('address.city').touched || submit) " class="text-danger">
+        <small *ngIf="registrationForm.get('address.city').errors?.required"> city is required</small>
+     <!-- fields should be min -->
+  
+     <small *ngIf="registrationForm.get('address.city').errors?.minlength"> city name must be atleast 3 letters</small>
+        
+  
+     <small *ngIf="registrationForm.get('address.city').errors?.pattern"> invalid city name</small>
+           <!-- fields should contain max letters -->
+  
+        
+        <small *ngIf="registrationForm.get('address.city').errors?.maxlength">field should not exceed more than 20 letters</small>
+      </div>
+      </div>
+         
+   <!-- <div class="form-group col-md-3">
+     <label >Pin code</label>
+     <input type="number" class="form-control" formControlName="pincode" >
+   </div> -->
+   </div>
+  
+   <div class="form-row" >
+    <div class="form-group col-md-4">
+      <label >street</label>
+            <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+      <input type="text" class="form-control" formControlName="street" 
+      [class.is-invalid]="registrationForm.get('address.street').invalid && (registrationForm.get('address.street').touched || submit )"
+  
+      
+     
+      >
+           <!-- validation for street field by using ngif  -->
+       <!-- if the street field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('address.street').invalid && (registrationForm.get('address.street').touched || submit) " class="text-danger">
+      <!-- field should required -->
+        <small *ngIf="registrationForm.get('address.street').errors?.required"> street is required</small>
+    
+        <small *ngIf="registrationForm.get('address.street').errors?.minlength">field should be atleast 3 letters</small>
+   
+        <!-- fields should contain max letters -->
+  
+        <small *ngIf="registrationForm.get('address.street').errors?.maxlength">field should not exceed more than 20 letters</small>
+       <!-- fields should be min -->
+  
+       <small *ngIf="registrationForm.get('address.street').errors?.pattern"> invalid street name</small>
+       
+      </div>
+      
+    </div>
+    <div class="form-group col-md-4">
+     
+      <label >Pin code</label>
+            <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+      <input type="text" class="form-control" formControlName="pincode" 
+      [class.is-invalid]="registrationForm.get('address.pincode').invalid && (registrationForm.get('address.pincode').touched || submit )"
+      >
+          <!-- validation for doorNo field by using ngif  -->
+       <!-- if the doorNo field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('address.pincode').invalid && (registrationForm.get('address.pincode').touched || submit) " class="text-danger">
+        <small *ngIf="registrationForm.get('address.pincode').errors?.required"> pincode is required</small>
+        <!-- here i declared a pattern for pin code -->
+        <small *ngIf="registrationForm.get('address.pincode').errors?.pattern">pincode should not exceed more than 6 letters</small>
+          
+  
+     
+      
+      </div>
+       
+    </div>
+   
+      <div class="form-group col-md-4">
+            <label >Land Mark</label>
+                  <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+  
+            <input type="text" class="form-control" formControlName="landmark"
+            [class.is-invalid]="registrationForm.get('address.landmark').invalid && (registrationForm.get('address.landmark').touched || submit )"
+      
+            >
+            
+          <!-- validation for landMark field by using ngif  -->
+       <!-- if the landMark field gets touched or gets invalid it should display an error message -->
+       <div *ngIf="registrationForm.get('address.landmark').invalid && (registrationForm.get('address.landmark').touched || submit) " class="text-danger">
+    
+        <small *ngIf="registrationForm.get('address.landmark').errors?.required"> landmark is required</small>
+        <small *ngIf="registrationForm.get('address.landmark').errors?.minlength">field should contain atleast 3 letters</small>
+  
+        <!-- fields should contain max letters -->
+  
+        <small *ngIf="registrationForm.get('address.landmark').errors?.maxlength">field should not exceed more than 20 letters</small>
+      <!-- patten when user enters number -->
+        <small *ngIf="registrationForm.get('address.landmark').errors?.pattern"> invalid landmark name</small>
+       
+      </div>
+          </div>
+        </div>
+  </div>
+  
+  <div class="form-group form-check">
+    <input type="checkbox" formControlName="terms" id="acceptTerms" class="form-check-input"  [ngClass]="{ 'is-invalid':  submit && registrationForm.get('terms').invalid}">
+    <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+    <div class="text-danger" *ngIf=" submit && registrationForm.get('terms').invalid ">
+      <small *ngIf="registrationForm.get('terms').errors?.required">please Accept Terms & Conditions</small>
+      </div>
+   
+  </div>
+  
+  
+    <h4 class="text-center text-success">{{success}}</h4>
+  <!-- its to submit data -->
+  <button class="btn btn-block btn-primary w-35 d-block mx-auto  my-5"  >Submit</button>
+  
+  <!-- a form group that contains two buttons aside -->
+  
+  <div class="button-row text-center mt-5">
+  <!-- this auto update data updates a patch value -->
+  <button type="button" class="btn btn-info " (click)="updateData()">Update Data</button>
+   <!--  its to reset data -->
+  <button class="btn btn-danger ml-3" type="button" (click)="reset()">Cancel Data</button>
+  </div>
+  <!-- this is about redirecting to login page -->
+  <p class="my-3"> Already have an account ?<b class="text-info" routerLink="/login">Click Here</b></p>
+  </form>
+  
+  
+  
+  
+  <!-- its to display the value in json forment -->
+  
+    <!-- <div class="form-value " align="center"       >
+          <p>{{registrationForm.value | json}}</p>
+      </div> -->
+    </div>
+  

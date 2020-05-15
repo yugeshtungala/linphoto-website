@@ -1,0 +1,124 @@
+{
+  "user": [
+    {
+      "fname": "sdfghjk",
+      "lname": "xcvbnm",
+      "email": "abcdef@mail.com",
+      "number": 8688877408,
+      "gender": "male",
+      "dob": "1996-12-13",
+      "password": "Jackson786!",
+      "reenter_password": "Jackson786!",
+      "address": {
+        "country": "india",
+        "state": "Andhra pradesh",
+        "city": "Vijayawada",
+        "street": "benz circle",
+        "pincode": "520001",
+        "landmark": "near Rama krishna theater"
+      },
+      "terms": true,
+      "id": 3
+    },
+    {
+      "fname": "sdfghjk",
+      "lname": "xcvbnm",
+      "email": "abcdef@mail.com",
+      "number": 8688877408,
+      "gender": "male",
+      "dob": "1996-12-13",
+      "password": "Jackson786!",
+      "reenter_password": "Jackson786!",
+      "address": {
+        "country": "india",
+        "state": "Andhra pradesh",
+        "city": "Vijayawada",
+        "street": "benz circle",
+        "pincode": "520001",
+        "landmark": "near Rama krishna theater"
+      },
+      "terms": true,
+      "id": 4
+    },
+    {
+      "fname": "sdfghjk",
+      "lname": "xcvbnm",
+      "email": "abcdef@mail.com",
+      "number": 8688877408,
+      "gender": "female",
+      "dob": "1996-12-13",
+      "password": "Jackson786!",
+      "reenter_password": "Jackson786!",
+      "address": {
+        "country": "india",
+        "state": "Andhra pradesh",
+        "city": "Vijayawada",
+        "street": "benz circle",
+        "pincode": "520001",
+        "landmark": "near Rama krishna theater"
+      },
+      "terms": true,
+      "id": 5
+    },
+    {
+      "fname": "sdfghjk",
+      "lname": "xcvbnm",
+      "email": "abcdef@mail.com",
+      "number": 8688877408,
+      "gender": "others",
+      "dob": "1996-12-13",
+      "password": "Jackson786!",
+      "reenter_password": "Jackson786!",
+      "address": {
+        "country": "india",
+        "state": "Andhra pradesh",
+        "city": "Vijayawada",
+        "street": "benz circle",
+        "pincode": "520001",
+        "landmark": "near Rama krishna theater"
+      },
+      "terms": true,
+      "id": 6
+    },
+    {
+      "fname": "sdfghjk",
+      "lname": "xcvbnm",
+      "email": "abcdef@mail.com",
+      "number": 8688877408,
+      "gender": "female",
+      "dob": "1996-12-13",
+      "password": "Jackson786!",
+      "reenter_password": "Jackson786!",
+      "address": {
+        "country": "india",
+        "state": "Andhra pradesh",
+        "city": "Vijayawada",
+        "street": "benz circle",
+        "pincode": "520001",
+        "landmark": "near Rama krishna theater"
+      },
+      "terms": true,
+      "id": 7
+    },
+    {
+      "fname": "sdfghjk",
+      "lname": "xcvbnm",
+      "email": "abcdef@mail.com",
+      "number": 8688877408,
+      "gender": "male",
+      "dob": "1996-12-13",
+      "password": "Jackson786!",
+      "reenter_password": "Jackson786!",
+      "address": {
+        "country": "india",
+        "state": "Andhra pradesh",
+        "city": "Vijayawada",
+        "street": "benz circle",
+        "pincode": "520001",
+        "landmark": "near Rama krishna theater"
+      },
+      "terms": true,
+      "id": 8
+    }
+  ]
+}

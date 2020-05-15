@@ -1,0 +1,164 @@
+   <!-- task8 content block 1 -->
+   <div class="task8_content">
+    <div class="task8_content_block1_padding">
+    <div class="task8_content_block1">
+        
+        <!-- 1st row -->
+        <div class="task8_content_block1_row1">
+            <div  class="bol" style="font-size: 22px;  font-weight: bold; " class="heading_s">Latest Blog Posts</div>
+            <!-- task8 content  block row1 paragraph -->
+            <div class="paragraph">
+                <p>[29-OCT-2024]</p>
+
+                <div class=".h4" class="Sub_headings" style="padding: 5px 0px;">
+                    <a [routerLink]="['/home']">Aenean a bibendum augue</a>
+                </div>
+                <p>
+                    Praesent eu ligula quis nibh ullamcorper tempor non ultrices lacus. </p>
+            </div>
+            <div class="paragraph">
+                <p>[28-OCT-2024]</p>
+                <div class=".h4" class="Sub_headings" style="padding: 5px 0px;">
+                    <a [routerLink]="['/home']">Nulla pharetra leo eget</a>
+                </div>
+                <p>
+                    Vivamus condimentum justo id tortor rhoncus eu ornare sem malesuada.</p>
+            </div>
+            <div class="paragraph">
+                <p>[27-OCT-2024]</p>
+                <div class=".h4" class="Sub_headings" style="padding: 5px 0px;">
+                    <a [routerLink]="['/home']">Vivamus metus justo</a>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+
+            </div>
+             <!-- button -->
+             <!-- in the button clicks it display the data by the help of ngIf  -->
+            <button class="read_more" *ngIf="showMore" (click)="showList()" type="button">Read all</button>
+            <!-- if its true it display the data -->
+            <!-- here i applied animations  -->
+              <div class="showscrollbar" *ngIf="!showMore" @fade >
+                  
+                <div class="paragraph">
+                    <p>[29-OCT-2024]</p>
+    
+                    <div class=".h4" class="Sub_headings" style="padding: 5px 0px;">
+                        <a [routerLink]="['/home']">Aenean a bibendum augue</a>
+                    </div>
+                    <p>
+                        Praesent eu ligula quis nibh ullamcorper tempor non ultrices lacus. </p>
+                </div>
+                <div class="paragraph">
+                    <p>[28-OCT-2024]</p>
+                    <div class=".h4" class="Sub_headings" style="padding: 5px 0px;">
+                        <a [routerLink]="['/home']">Nulla pharetra leo eget</a>
+                    </div>
+                    <p>
+                        Vivamus condimentum justo id tortor rhoncus eu ornare sem malesuada.</p>
+                </div>
+                <div class="paragraph">
+                    <p>[27-OCT-2024]</p>
+                    <div class=".h4" class="Sub_headings" style="padding: 5px 0px;">
+                        <a [routerLink]="['/home']">Vivamus metus justo</a>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+    
+                </div>
+                     
+            <button class="read_more"  *ngIf="!showMore" (click)="showList()"  type="button">Show less</button>
+              </div> 
+        <div class="vr_line"></div>
+        </div>
+        <div class="vr_line"></div>
+        <!-- task8 body middle content block2 -->
+        <div class="task8_content_block1_row2">
+            <!-- banner image -->
+            <img src="../../../../../assets/carousal.jpg">
+            <div style="font-size: 22px;font-weight: bold;  " class="heading_s">Welcome to our photo site!</div>
+            <!-- task8_content_block1_row2 data -->
+            <p>This <a [routerLink]="['/home']" >free website template</a> is brought to you by <a [routerLink]="['/home']">templatemo.com</a> website. You may use this template in your websites. Credit goes to <a [routerLink]="['/home']">Free Photos</a> for photos.</p>
+
+            <p style="margin-top: 20px;">Vivamus a massa. Donec iaculis felis id neque. Morbi nunc. Praesent varius egestas velit. Donec a massa ut pede pulvinar vulputate. Nulla et augue. Sed eu nunc quis pede tristique suscipit. Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit, pellentesque mattis, faucibus vitae, feugiat vitae, sapien. Donec ante. Fusce ac orci sit amet velit ultrices condimentum.</p>
+          
+        </div>
+        <div class="vr_line"></div>
+        <!-- task8 body middle content block 3 -->
+        <div class="task8_content_block1_row3"> 
+
+            <div style="font-size: 25px;font-weight: bold; " class="heading_s">Categories</div>
+            <!-- list with icons -->
+            <div class="list_s">
+                <li><a [routerLink]="['/home']">Lorem ipsum dolor</a></li>
+                <li><a [routerLink]="['/home']">Aenean ac lobortis felis</a></li>
+                <li><a [routerLink]="['/home']">Crass eros dolor <br></a></li>
+                <li><a [routerLink]="['/home']">Vivamus orci velit</a></li>
+                <li><a [routerLink]="['/home']">Proin ultrices eros</a></li>
+                <li><a [routerLink]="['/home']">Aliquam ac nisl eget</a></li>
+                <li><a [routerLink]="['/home']">Praesent vehicula tellus</a></li>
+                <li><a [routerLink]="['/home']">Mauris egestas nunc</a></li>
+                <li><a [routerLink]="['/home']">Ut semper porta magna</a></li>
+                <li><a [routerLink]="['/home']">Donec ante risus</a></li>
+                <li><a [routerLink]="['/home']">Nunc bibendum neque</a></li>
+                
+            </div>
+
+        </div>
+    </div>
+    <!-- task8_content_block2 images -->
+    <div class="task8_content_block2_images-container">
+        <div class="hr_line"></div>
+        <div class="task8_content_block2_images">
+
+            <div class="image-width">
+                <img src="../../../../../assets/pic3.png">
+                <div class="p"> Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                     pellentesque mattis, faucibus vitae, feugiat vitae. <a *ngIf="showData" (click)="show()" >Read more...</a>
+                   <p *ngIf="!showData"   @fade >Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                    pellentesque mattis, faucibus vitae, feugiat vitae.Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                    pellentesque mattis, faucibus vitae, feugiat vitae.</p>
+                    <a *ngIf="!showData" (click)="show()" @fade>show less</a>
+                   </div> 
+             
+            </div>
+            <div class="image-width">
+                <img src="../../../../../assets/pic1.jpg">
+                <div class="p"> Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                    pellentesque mattis, faucibus vitae, feugiat vitae. <a *ngIf="showData2" (click)="show2()" >Read more...</a>
+                  <p *ngIf="!showData2"   @fade >Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                   pellentesque mattis, faucibus vitae, feugiat vitae.Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                   pellentesque mattis, faucibus vitae, feugiat vitae.</p>
+                   <a *ngIf="!showData2" (click)="show2()" @fade>show less</a>
+                  </div> 
+            </div>
+            <div class="image-width">
+                <img src="../../../../../assets/pic2.png">
+                <div class="p"> Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                    pellentesque mattis, faucibus vitae, feugiat vitae. <a *ngIf="showData3" (click)="show3()" >Read more...</a>
+                  <p *ngIf="!showData3"  @fade   >Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                   pellentesque mattis, faucibus vitae, feugiat vitae.Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                   pellentesque mattis, faucibus vitae, feugiat vitae.</p>
+                   <a *ngIf="!showData3" (click)="show3()" @fade>show less</a>
+                  </div> 
+            </div>
+            <div class="image-width">
+              
+                <img src="../../../../../assets/seepic.jpg">
+                <div class="p"> Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                    pellentesque mattis, faucibus vitae, feugiat vitae. <a *ngIf="showData4" (click)="show4()" >Read more...</a>
+                  <p *ngIf="!showData4"  @fade  >Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                   pellentesque mattis, faucibus vitae, feugiat vitae.Nam sit amet justo vel libero tincidunt dignissim. Cras magna velit,
+                   pellentesque mattis, faucibus vitae, feugiat vitae.</p>
+                   <a *ngIf="!showData4" (click)="show4()" @fade >show less</a>
+                  </div> 
+            </div>
+           
+        </div>
+
+
+    </div>
+</div>
+</div>

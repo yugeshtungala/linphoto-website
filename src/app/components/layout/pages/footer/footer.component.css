@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+.actives{
+    color: red;
+}
+.task-8-footer {
+    background-color: #343233;
+    display: flex;
+    padding: 10px;
+border-top: 1px solid #817f80;
+}
+a{
+    color: #ddce3c; 
+    text-decoration: underline;
+    cursor: pointer;
+}
+p{
+    color: white;
+}
+.fire-icon {
+    width: 20%;
+    padding: 10px;
+}
+
+.fire-icon img{
+    justify-content: end;
+}
+
+.footer-nav-links {
+    width: 60%;
+}
+
+.fire-icon-right {
+    width: 20%;
+    padding: 10px;
+  
+}
+
+.fire-icon-right img{
+    transform: rotate(180deg)
+}
+
+.footer-nav-links ul {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-nav-links ul li {
+    display: inline-block;
+    padding: 12px;
+    color: white;
+    cursor: pointer;
+}
+.footer-nav-links ul li:hover{
+    color: yellow;
+}
+
+span{
+color: white;
+}
+
+
+
+
+
+/* .footer-two-button button {
+    background: linear-gradient(to right, #ffffff 20%, #fafa0b 100%);
+} */
+
+.footer-two-button {
+    justify-content: center;
+    display: flex;
+overflow: hidden;
+
+    margin: 10px 0px;
+}
+.footer-two-button img{
+    width: 53px;
+    height: 46px;
+    cursor: pointer;
+}
+
+#h_tml{
+   background-color: yellow;
+   color: black;
+  padding:4px;
+  line-height: 1.15;
+  position: relative;
+  cursor: pointer;
+}
+#h_tml i{
+   position: absolute;
+   /* float: right; */
+   top: 10%;
+   left: 85%;
+   color:red;
+   font-size: 25px; 
+}
+#c_ss{
+   background-color:skyblue;
+   color: black;
+  padding:4px;
+  cursor: pointer;
+  line-height: normal;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#c_ss i{
+   position: absolute;
+   /* float: right; */
+   top: 10%;
+   left: 85%;
+   color: green;
+   font-size: 25px; 
+
+}
+
+
+/* responsive statered */
+
+
+@media (min-width: 320px) and (max-width: 568px) {
+  
+    #html{
+        margin-right: 20px;
+     }
+     
+  
+
+}
+
+@media (max-width: 575.98px) {
+    
+
+    .footer-nav-links ul li {
+        display: block;
+        margin: 0px auto;
+        text-align: center;
+    }
+    span{
+        display: none;
+    }
+      
+
+    .fire-icon {
+        display: none;
+    }
+
+    .fire-icon-right {
+        display: none;
+    }
+
+    .footer-nav-links {
+        width: 100%;
+    }
+
+    form input {
+        padding: 3px;
+    }
+
+    form button {
+        padding: 3px;
+    }
+ 
+}
+/*  */
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    
+.fire-icon {
+    width: 15%;
+    padding: 10px;
+  
+
+
+}
+.fire-icon img{
+    width: 100px;
+    height: 50px;
+
+}
+
+.fire-icon img{
+    justify-content: end;
+}
+
+.footer-nav-links {
+    width: 70%;
+}
+
+.fire-icon-right {
+    width: 15%;
+    padding: 10px;
+  
+}
+.fire-icon-right img{
+    width: 100px;
+    height: 50px;
+
+}
+}

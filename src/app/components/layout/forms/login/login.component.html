@@ -1,0 +1,57 @@
+<!-- here i display's the login form using bootstrap -->
+
+<div class="container shadow-lg p-5 my-5 bg-white rounded  col-xs-3 col-sm-3 col-md-6 col-lg-4 col-xl-4 mt-5 pb-5 mt-5 pb-5">
+    <!-- form header -->
+          <h3  class="pb-4" style="text-align: center">Lin's photo login Form</h3>
+  <!-- form starts  -->
+  <!-- here i given a templete refrence to ngform & in ngsubmit i am giving a condition to it that is
+  if userform get valid && submit method gets exicutes
+  -->
+  <form #userForm="ngForm" (ngSubmit)="submit(userForm)" >
+      <!--   -->
+  
+  <!--  -->
+  <!-- email field with validation -->
+          <div class="form-group">
+            <label >Email</label>
+            <!-- i used bootstrap inbuilt class for diplaying error input field when the field gets touched & invalid or submited -->
+            <!-- here i used ngModel for two way binding  -->
+            <input type="email"  class="form-control" #email="ngModel" [(ngModel)]="employeesLogin.email"  name="email"
+            [class.is-invalid]=" email.invalid && ( email.touched ||  userForm.submitted )" required email
+            >
+            <!-- here i displaying a error messsage when the field gets touched & invalid or submited -->
+            <div *ngIf=" email.invalid && ( email.touched || userForm.submitted  )" class="text-danger">
+              <small *ngIf="email.errors.required">Please enter email</small>
+              <!-- here i displaying error message for when user inputs error email pattern  -->
+              <small *ngIf="email.errors.email">Please enter valid email</small>
+            </div>
+           
+          </div>
+          <!-- password field -->
+          <div class="form-group">
+            <label>Password</label>
+             <!-- i used bootstrap inbuilt class for diplaying error input field when the field gets touched & invalid or submited and also password pattern -->
+           
+            <input type="password" class="form-control" [(ngModel)]="employeesLogin.password" name="password" #password="ngModel"
+            [ngClass]="{'is-invalid': password.invalid && (password.touched || userForm.submitted)}" required
+            pattern ='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$#^!%*?&])[A-Za-z\d$@$!%*?&].{8,}$'
+            >
+             <!-- here i displaying a error messsage when the field gets touched & invalid or submited -->
+            <div *ngIf=" password.invalid && ( password.touched || userForm.submitted  )" class="text-danger">
+              <small *ngIf="password.errors.required">Please enter password</small>
+                          <!-- here i displaying error message for when user inputs error password pattern  -->
+              <small *ngIf="password.errors.pattern">Please enter valid password</small>
+            </div>
+          </div>
+          <p class="text-success">{{loginMessage}}</p>
+  <!-- its just a submit button -->
+          <button type="submit" class="btn btn-primary btn-block mt-3" >Submit</button>
+  <!-- if user does not have an account ...then i given to navigate to registration form componenet -->
+          <p class="pull-right">To create a new registration ?  <span routerLink="/register">Click Here</span></p>
+        </form>
+          
+        </div>
+  
+  
+  
+       

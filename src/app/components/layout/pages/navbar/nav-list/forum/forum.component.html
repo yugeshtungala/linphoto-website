@@ -1,0 +1,61 @@
+<!-- here i display's the login form using bootstrap -->
+
+<div class="container shadow-lg p-5 my-5 bg-white rounded  col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mt-5 pb-5 mt-5 pb-5">
+    <!-- form header -->
+          <h3  class="pb-4" style="text-align: center">Lin's Photo forum</h3>
+          <!-- form starts -->
+  <form [formGroup]="forum"  (ngSubmit)="save()" >
+      <div class="form-group">
+          <!-- label -->
+          <label>Title</label>
+              <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+
+          <input type="text" class="form-control" formControlName="title" [ngClass]="{'is-invalid':forum.get('title').invalid && (forum.get('title').touched || submitForm) }">
+           <!-- if the input field gets touched or gets invalid it should display an error message -->
+     
+          <div *ngIf="forum.get('title').invalid && (forum.get('title').touched || submitForm) " class="text-danger">
+               <p *ngIf="forum.get('title').errors?.required">titile is required</p>
+                        <!-- field should contain minimum letters-->
+        
+               <p *ngIf="forum.get('title').errors?.minlength">title must be atleast 3 letters</p>
+                 <!-- field should contain minimum letters-->
+               <p *ngIf="forum.get('title').errors?.maxlength">title should not exceed 20 letters</p>
+          </div>
+      </div>
+      <div class = "form-group">
+          <!-- label -->
+        <label >Discription</label>
+        <!-- input field validation using is-invalid class  if the input field gets touched or gets invalid it should display input with red border -->
+
+        <textarea class = "form-control" formControlName="discription"  rows = "5" [ngClass]="{'is-invalid':forum.get('discription').invalid && (forum.get('discription').touched || submitForm) }" placeholder = "Enter Discription"></textarea>
+         <!-- if the input field gets touched or gets invalid it should display an error message -->
+     
+        <div *ngIf="forum.get('discription').invalid && (forum.get('discription').touched || submitForm) " class="text-danger">
+            <p *ngIf="forum.get('discription').errors?.required">titile is required</p>
+                <!-- field should contain minimum letters-->
+        
+            <p *ngIf="forum.get('discription').errors?.minlength">title must be atleast 3 letters</p>
+                <!-- field should contain maximum letters-->
+        
+            <p *ngIf="forum.get('discription').errors?.maxlength">title should not exceed 20 letters</p>
+       </div>
+    </div>
+         <!-- terms & conditions -->
+    <div class="form-group form-check">
+           <!-- if the input field gets touched or gets invalid it should display an error message -->
+     
+        <input type="checkbox" formControlName="terms" id="acceptTerms" class="form-check-input"  [ngClass]="{'is-invalid':forum.get('terms').invalid && (forum.get('terms').touched || submitForm) }">
+        <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+        <div class="text-danger" *ngIf="forum.get('terms').invalid && (forum.get('terms').touched || submitForm)">
+          <small *ngIf="forum.get('terms').errors?.required">please Accept Terms & Conditions</small>
+          </div>
+       
+      </div>
+      <!-- submit button -->
+      <button type="submit"  class="btn btn-primary w-50 d-block mt-2 mx-auto">Submit</button>
+  </form>
+        </div>
+  
+  
+  
+       

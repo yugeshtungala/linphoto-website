@@ -1,0 +1,119 @@
+*{
+    margin: 0px !important;
+    font-family: Arial;
+    padding: 0px !important;
+    
+}
+
+.task-8_header {
+    background-image: url(../../../../../assets/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130px;  
+    border-bottom: 2px solid black;
+}
+.normal_form {
+    float: right !important; 
+    margin: 60px 19px 0px 0px !important;
+    overflow: hidden;
+}
+#search_button:hover{
+    background-color: red;
+    color: white;
+}
+#search_field{
+   
+	width: 180px !important;
+    font-size: 12px;
+    padding: 5px !important;
+	color:white;
+	background:#af1313;
+	border:1px solid black;
+}
+#search_button {
+      /* margin-left: 2px; */
+        padding: 5px !important;
+        font-size: 12px;
+       cursor: pointer;
+       text-align: center !important;
+       vertical-align: bottom !important; 
+       color:white;
+       background: none; 
+       border: 1px solid black;
+   
+}
+input {
+    background-color: brown;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+    
+    
+}
+#header_up{
+    margin: 6px 0 0 55px !important;
+    position: absolute;
+    font-size: 13px;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#header_brand {
+    float: left;
+    margin: 20px 0 0 40px !important;; 
+    width: 303px;
+    position: relative;
+}
+
+h1 {
+    font-size: 70px;
+    color: white;
+
+    font-family: "Brush Script MT";
+    float: left;
+
+    align-items: center;
+}
+
+
+/* responsive for small devices */
+@media (max-width: 575.98px) {
+    /* header responsive */
+    #header_brand {
+        float: left;
+        margin: 20px 0 0 80px  !important;
+        width: 150px  !important;
+    }
+    #header_up {
+        margin: 6px 0 0 100px  !important;}
+
+    h1 {
+        font-size: 40px;
+        color: white;
+
+
+        float: left;
+
+        align-items: center;
+    }
+
+    .normal_form {
+        float: right;
+        margin: 10px 15px 0px 0px !important;
+
+    }
+}
+/* resposive for medium devices */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1 {
+        font-size: 50px;
+    }
+    .normal_form {
+        float: right;
+        margin: 10px 15px 0px 0px !important;;
+
+    }
+}
